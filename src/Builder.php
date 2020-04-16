@@ -120,9 +120,7 @@ class Builder
             $fields->push('*');
         }
 
-        $fields = $fields->filter(function ($field) {
-            return !strpos($field, '.');
-        })->flatten();
+        $fields = $fields->flatten();
 
         if ($fields->count() === 0) {
             $fields->push('*');
